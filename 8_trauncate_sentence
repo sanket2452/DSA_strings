@@ -1,0 +1,16 @@
+class Solution {
+public:
+    string truncateSentence(string s, int k) {
+        string ans="";
+        int abc=0;
+        int i=0;
+        while(abc<k && i<s.size()){
+            if(s[i]==' '){ 
+                abc++;
+                if(abc!=k) ans+=s[i++];
+            }
+            else ans+=s[i++];
+        }
+        return ans;
+    }
+};
