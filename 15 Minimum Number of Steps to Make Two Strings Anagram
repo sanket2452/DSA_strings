@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int minSteps(string s, string t) {
+        unordered_map<char, int> mpp;
+        for(auto c: s){
+            mpp[c]++;
+        }
+        
+        int cnt=0;
+        for(auto c: t){
+            if(mpp.count(c) && mpp[c]>0) mpp[c]--;
+            else if(!mpp.count(c)) cnt++;
+            else if(mpp.count(c) && mpp[c]==0) cnt++;
+        }
+        return cnt;
+    }
+};
