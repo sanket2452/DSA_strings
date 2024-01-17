@@ -1,0 +1,21 @@
+#include <bits/stdc++.h> 
+vector<string> divideString(string &word, int n) {
+
+  // Write your code here
+  
+  vector<string> ans;
+  int s=word.size();
+
+  if(s%n!=0) return ans;
+  int len=s/n;
+  int i=0;
+  while(i<s){
+    string ss="";
+    for(int j=i;j<len+i;j++){
+      ss+=word[j];
+    }
+    ans.push_back(ss);
+    i+=len;
+  }
+  return ans;
+}
